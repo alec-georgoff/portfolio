@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import './styles/General.scss';
 import './index.scss';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './styles/HomePage.scss';
-import './styles/General.scss';
+import './styles/EducationPage.scss';
 import HomePage from './routes/HomePage';
+import EducationPage from './routes/EducationPage';
 
 const router = createBrowserRouter([
     {
@@ -18,7 +20,7 @@ const router = createBrowserRouter([
     },
     {
         path: 'education',
-        element: <div>Education page</div>,
+        element: <EducationPage />,
     },
     {
         path: 'hobbies',
