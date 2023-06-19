@@ -7,9 +7,11 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './styles/HomePage.scss';
 import './styles/EducationPage.scss';
 import './styles/ExperiencePage.scss';
+import './styles/HobbiesPage.scss';
 import HomePage from './routes/HomePage';
 import EducationPage from './routes/EducationPage';
 import ExperiencePage from './routes/ExperiencePage';
+import HobbiesPage from './routes/HobbiesPage';
 
 const router = createBrowserRouter([
     {
@@ -26,7 +28,7 @@ const router = createBrowserRouter([
     },
     {
         path: 'hobbies',
-        element: <div>Hobbies page</div>,
+        element: <HobbiesPage />,
     },
 ]);
 
