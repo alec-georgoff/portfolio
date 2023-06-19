@@ -1,7 +1,7 @@
 import React from 'react';
 
 const HomePage = () => (
-    <>
+    <div>
         <div className="name-title">Alec Georgoff</div>
         <div className="personal-details">
             <em>Seattle, WA</em>
@@ -22,7 +22,7 @@ const HomePage = () => (
             products. Committed to building resilient software while helping
             cultivate flexible, diverse, and empathetic engineering teams.
         </section>
-    </>
+    </div>
 );
 
 export default HomePage;
