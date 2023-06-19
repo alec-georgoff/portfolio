@@ -1,0 +1,31 @@
+section.job {
+    flex-direction: column;
+}
+
+.job-title-and-date-row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.job-title {
+    font-weight: bolder;
+    font-size: 2rem;
+}
+
+.job-dates {
+    font-size: 1.5rem;
+    justify-content: flex-end;
+}
+
+.job-company-name {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1.5rem;
+}
+
+.job-location {
+    font-style: italic;
+    font-size: 1.5rem;
+}

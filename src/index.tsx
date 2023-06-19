@@ -6,8 +6,10 @@ import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './styles/HomePage.scss';
 import './styles/EducationPage.scss';
+import './styles/ExperiencePage.scss';
 import HomePage from './routes/HomePage';
 import EducationPage from './routes/EducationPage';
+import ExperiencePage from './routes/ExperiencePage';
 
 const router = createBrowserRouter([
     {
@@ -16,7 +18,7 @@ const router = createBrowserRouter([
     },
     {
         path: 'experience',
-        element: <div>Experience page</div>,
+        element: <ExperiencePage />,
     },
     {
         path: 'education',
