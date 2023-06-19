@@ -1,25 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './styles/General.scss';
+import './index.scss';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import './styles/HomePage.scss';
+import './styles/EducationPage.scss';
+import './styles/ExperiencePage.scss';
+import './styles/HobbiesPage.scss';
+import HomePage from './routes/HomePage';
+import EducationPage from './routes/EducationPage';
+import ExperiencePage from './routes/ExperiencePage';
+import HobbiesPage from './routes/HobbiesPage';
 
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <div>Home page</div>,
+        element: <HomePage />,
     },
     {
         path: 'experience',
-        element: <div>Experience page</div>,
+        element: <ExperiencePage />,
     },
     {
         path: 'education',
-        element: <div>Education page</div>,
+        element: <EducationPage />,
     },
     {
         path: 'hobbies',
-        element: <div>Hobbies page</div>,
+        element: <HobbiesPage />,
     },
 ]);
 
