@@ -15,13 +15,17 @@ const HomePage = () => (
                 <a href="https://linkedin.com/in/alecgeorgoff">LinkedIn</a>
             </em>
         </div>
-
         <section>
             Determined full stack software engineer with experience mastering
             new technologies quickly and contributing to existing software
             products. Committed to building resilient software while helping
             cultivate flexible, diverse, and empathetic engineering teams.
         </section>
+        <h2>Skills</h2>
+        Web Application Development | REST API Development | HTML5 | CSS |
+        JavaScript | TypeScript | React | SQL | Cloud Computing | C#/.NET |
+        Entity Framework | Third Party APIs | Git | GitHub/GitLab | Mobile-First
+        Devlopment | Responsive Web Design | CircleCI | Node.js
     </div>
 );
 
