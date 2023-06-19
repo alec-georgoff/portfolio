@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import './index.scss';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import './styles/HomePage.scss';
+import './styles/General.scss';
+import HomePage from './routes/HomePage';
 
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <div>Home page</div>,
+        element: <HomePage />,
     },
     {
         path: 'experience',
