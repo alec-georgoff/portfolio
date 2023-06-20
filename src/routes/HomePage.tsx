@@ -7,7 +7,7 @@ const HomePage = () => {
     const navigate = useNavigate();
 
     return (
-        <div>
+        <div style={{ flexDirection: 'column' }}>
             <div className="name-title">Alec Georgoff</div>
             <div className="personal-details">
                 <em>Seattle, WA</em>
