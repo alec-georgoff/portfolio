@@ -12,23 +12,40 @@ import HomePage from './routes/HomePage';
 import EducationPage from './routes/EducationPage';
 import ExperiencePage from './routes/ExperiencePage';
 import HobbiesPage from './routes/HobbiesPage';
+import ApplicationWrapper from './components/ApplicationWrapper';
 
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <HomePage />,
+        element: (
+            <ApplicationWrapper>
+                <HomePage />
+            </ApplicationWrapper>
+        ),
     },
     {
         path: 'experience',
-        element: <ExperiencePage />,
+        element: (
+            <ApplicationWrapper>
+                <ExperiencePage />
+            </ApplicationWrapper>
+        ),
     },
     {
         path: 'education',
-        element: <EducationPage />,
+        element: (
+            <ApplicationWrapper>
+                <EducationPage />
+            </ApplicationWrapper>
+        ),
     },
     {
         path: 'hobbies',
-        element: <HobbiesPage />,
+        element: (
+            <ApplicationWrapper>
+                <HobbiesPage />
+            </ApplicationWrapper>
+        ),
     },
 ]);
 

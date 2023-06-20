@@ -1,4 +1,5 @@
 import React from 'react';
+import { Stack } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
 
@@ -20,7 +21,7 @@ const HomePage = () => {
                     <a href="https://linkedin.com/in/alecgeorgoff">LinkedIn</a>
                 </em>
             </div>
-            <section>
+            <Stack gap={2}>
                 <Button
                     variant="primary"
                     size="lg"
@@ -42,7 +43,7 @@ const HomePage = () => {
                 >
                     Hobbies
                 </Button>
-            </section>
+            </Stack>
             <section>
                 Determined full stack software engineer with experience
                 mastering new technologies quickly and contributing to existing
