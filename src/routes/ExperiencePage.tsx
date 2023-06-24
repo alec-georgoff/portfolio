@@ -7,7 +7,7 @@ const ExperiencePage = () => (
     <div>
         <h2>Work Experience</h2>
 
-        <Container>
+        <Container fluid={'xs'}>
             <Row xs={1} md={2} style={{ flexDirection: 'row' }}>
                 {jobs.map((j, idx) => (
                     <Col key={idx}>

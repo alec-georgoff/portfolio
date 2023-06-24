@@ -11,31 +11,61 @@ const JobCard = (props: JobCardProps) => {
 
     const persistentDetails = (
         <>
-            <Card.Title>{props.jobDetails.title}</Card.Title>
-            <Card.Subtitle>{props.jobDetails.company}</Card.Subtitle>
-            <Card.Text>{props.jobDetails.location}</Card.Text>
-            <Card.Text>{`${props.jobDetails.startDate} - ${props.jobDetails.endDate}`}</Card.Text>
+            <Card.Title style={{ fontSize: '2rem', textAlign: 'center' }}>
+                {props.jobDetails.title}
+            </Card.Title>
+            <Card.Subtitle style={{ textAlign: 'center', color: '#667069' }}>
+                {props.jobDetails.company}
+            </Card.Subtitle>
+            <Card.Text style={{ color: '#667069' }}>
+                {props.jobDetails.location}
+            </Card.Text>
+            <Card.Text
+                style={{ color: '#667069' }}
+            >{`${props.jobDetails.startDate} - ${props.jobDetails.endDate}`}</Card.Text>
         </>
     );
 
-    return showBack ? (
-        <Card onClick={() => setShowBack(!showBack)}>
-            <Card.Body>{persistentDetails}</Card.Body>
-            <Card.Body>
-                <ul>
-                    {props.jobDetails.bullets.map((b) => (
-                        <li>{b}</li>
-                    ))}
-                </ul>
-            </Card.Body>
-        </Card>
-    ) : (
+    return (
         <Card
-            style={{ maxWidth: '20rem' }}
             onClick={() => setShowBack(!showBack)}
+            style={{
+                margin: '1rem',
+                minHeight: '31rem',
+                maxHeight: '40rem',
+                width: '25rem',
+                maxWidth: '25rem',
+                boxShadow:
+                    '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+            }}
         >
-            <Card.Img variant="top" src={props.jobDetails.image} />
-            <Card.Body>{persistentDetails}</Card.Body>
+            {showBack ? (
+                <>
+                    <Card.Body>{persistentDetails}</Card.Body>
+                    <Card.Body>
+                        <ul>
+                            {props.jobDetails.bullets.map((b) => (
+                                <li>{b}</li>
+                            ))}
+                        </ul>
+                    </Card.Body>
+                </>
+            ) : (
+                <>
+                    <Card.Img
+                        variant="top"
+                        src={props.jobDetails.image}
+                        style={{
+                            padding: '1rem',
+                            borderRadius: '50%',
+                            objectFit: 'cover',
+                            width: '20rem',
+                            height: '20rem',
+                        }}
+                    />
+                    <Card.Body>{persistentDetails}</Card.Body>
+                </>
+            )}
         </Card>
     );
 };
