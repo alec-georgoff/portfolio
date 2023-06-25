@@ -1,19 +1,20 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { getAlbumKeys, getRandomImageUrl } from './service';
+import { SmugmugAlbum, getAlbumKeys, getRandomImageUrl } from './service';
 
 export const SmugmugWidget = () => {
-    const [albumKeys, setAlbumKeys] = useState<string[]>([]);
-    const [imageUrl, setImageUrl] = useState<string | undefined>(undefined);
+    const [albumKeys, setAlbumKeys] = useState<SmugmugAlbum[]>([]);
+    const [image, setImage] = useState<
+        { imageUrl: string | undefined; albumName: string } | undefined
+    >(undefined);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        console.log(1);
         void (async () => {
             const keys = await getAlbumKeys();
             setAlbumKeys(keys);
 
             const url = await getRandomImageUrl(keys);
-            setImageUrl(url);
+            setImage(url);
             setLoading(false);
         })();
 
@@ -22,24 +23,29 @@ export const SmugmugWidget = () => {
     }, []);
 
     const refreshImage = useCallback(() => {
-        console.log('refresh');
         getRandomImageUrl(albumKeys)
             .then((res) => {
-                setImageUrl(res);
+                setImage(res);
                 setLoading(false);
             })
             .catch((err) => console.log(err));
     }, [albumKeys]);
 
     const handleRefreshImage = () => {
-        setImageUrl(undefined);
+        setImage(undefined);
         refreshImage();
     };
 
     return (
         <div>
-            {imageUrl && !loading ? (
-                <img src={imageUrl} onClick={() => handleRefreshImage()} />
+            {image && !loading ? (
+                <div>
+                    <img
+                        src={image.imageUrl}
+                        onClick={() => handleRefreshImage()}
+                    />
+                    <span>{image.albumName}</span>
+                </div>
             ) : (
                 <span>Loading image</span>
             )}

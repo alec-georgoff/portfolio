@@ -3,8 +3,9 @@ import axios from 'axios';
 const accessToken = process.env.REACT_APP_SMUGMUG_ACCESS_TOKEN || '';
 const apiKey = process.env.REACT_APP_SMUGMUG_API_KEY;
 
-interface SmugmugAlbum {
+export interface SmugmugAlbum {
     AlbumKey: string;
+    Title: string;
 }
 
 interface SmugmugInfo {
@@ -55,22 +56,22 @@ export const getAlbumKeys = async () => {
             // const data = JSON.parse(res.data as string) as SmugmugResponse;
             const typedRes = res.data as unknown as SmugmugResponse;
 
-            const albumKeys = typedRes.Response.Album.map((a) => a.AlbumKey);
+            const albumKeys = typedRes.Response.Album;
 
             console.log(albumKeys);
             return albumKeys;
         })
         .catch((err) => {
             console.log(err);
-            return [] as string[];
+            return [] as SmugmugAlbum[];
         });
 
     return result;
 };
 
-export const getAlbumImages = async (albumKey: string) => {
+export const getAlbumImages = async (albumInfo: SmugmugAlbum) => {
     const result = await instance
-        .get(`/album/${albumKey}!images`)
+        .get(`/album/${albumInfo.AlbumKey}!images`)
         .then((res) => {
             const typedRes = res.data as unknown as {
                 Code: number;
@@ -82,11 +83,11 @@ export const getAlbumImages = async (albumKey: string) => {
             );
 
             console.log(imageKeys);
-            return imageKeys;
+            return { imageKeys: imageKeys, albumName: albumInfo.Title };
         })
         .catch((err) => {
             console.log(err);
-            return [] as string[];
+            return { imageKeys: [] as string[], albumName: '' };
         });
 
     return result;
@@ -115,20 +116,20 @@ export const getImageUrl = async (imageKey: string) => {
     return result;
 };
 
-export const getRandomImageUrl = async (albumKeys: string[]) => {
-    if (!albumKeys.length) return undefined;
+export const getRandomImageUrl = async (albums: SmugmugAlbum[]) => {
+    if (!albums.length) return undefined;
 
-    let randomIndex = Math.floor(Math.random() * albumKeys.length);
-    const randomAlbumKey = albumKeys[randomIndex];
+    let randomIndex = Math.floor(Math.random() * albums.length);
+    const randomAlbumKey = albums[randomIndex];
 
     const albumImages = await getAlbumImages(randomAlbumKey);
 
-    if (!albumImages.length) return undefined;
+    if (!albumImages || !albumImages.imageKeys.length) return undefined;
 
-    randomIndex = Math.floor(Math.random() * albumImages.length);
-    const randomImageKey = albumImages[randomIndex];
+    randomIndex = Math.floor(Math.random() * albumImages.imageKeys.length);
+    const randomImageKey = albumImages.imageKeys[randomIndex];
 
     const imageUrl = await getImageUrl(randomImageKey);
 
-    return imageUrl;
+    return { imageUrl: imageUrl, albumName: randomAlbumKey.Title };
 };
