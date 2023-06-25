@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { SmugmugAlbum, getAlbumKeys, getRandomImageUrl } from './service';
+import { Spinner } from 'react-bootstrap';
 
 export const SmugmugWidget = () => {
     const [albumKeys, setAlbumKeys] = useState<SmugmugAlbum[]>([]);
@@ -47,7 +48,7 @@ export const SmugmugWidget = () => {
                     <span>{image.albumName}</span>
                 </div>
             ) : (
-                <span>Loading image</span>
+                <Spinner animation="border" />
             )}
         </div>
     );
