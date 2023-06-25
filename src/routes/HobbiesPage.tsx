@@ -1,8 +1,11 @@
 import React from 'react';
+import { SmugmugWidget } from '../integrations/smugmug/SmugmugWidget';
 
 const HobbiesPage = () => (
     <div>
         <h2>Hobbies</h2>
+
+        <SmugmugWidget />
 
         <section>
             <h1 className="hobby-title">Cycling</h1>
