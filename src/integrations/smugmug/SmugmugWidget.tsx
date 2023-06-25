@@ -29,7 +29,7 @@ export const SmugmugWidget = () => {
                 setLoading(false);
             })
             .catch((err) => console.log(err));
-    }, []);
+    }, [albumKeys]);
 
     const handleRefreshImage = () => {
         setImageUrl(undefined);
