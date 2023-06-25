@@ -44,8 +44,8 @@ const JobCard = (props: JobCardProps) => {
                     <Card.Body>{persistentDetails}</Card.Body>
                     <Card.Body>
                         <ul>
-                            {props.jobDetails.bullets.map((b) => (
-                                <li>{b}</li>
+                            {props.jobDetails.bullets.map((b, idx) => (
+                                <li key={idx}>{b}</li>
                             ))}
                         </ul>
                     </Card.Body>
