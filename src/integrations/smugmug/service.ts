@@ -3,40 +3,28 @@ import axios from 'axios';
 const accessToken = process.env.REACT_APP_SMUGMUG_ACCESS_TOKEN || '';
 const apiKey = process.env.REACT_APP_SMUGMUG_API_KEY;
 
+interface SmugmugImageResponse {
+    AlbumImage: {
+        ImageKey: string;
+    }[];
+}
+
 export interface SmugmugAlbum {
     AlbumKey: string;
     Title: string;
 }
 
-interface SmugmugInfo {
+interface SmugmugImageSizeDetailsResponse {
+    ImageSizeDetails: {
+        ImageSizeLarge: {
+            Url: string;
+        };
+    };
+}
+
+interface SmugmugAlbumResponse {
     Album: SmugmugAlbum[];
 }
-
-interface SmugmugResponse {
-    Code: number;
-    Message: string;
-    Response: SmugmugInfo;
-}
-
-interface SmugmugImage {
-    ImageKey: string;
-}
-
-interface SmugmugImageResponse {
-    AlbumImage: SmugmugImage[];
-}
-
-interface SmugmugImageSizeDetails {
-    ImageSizeLarge: { Url: string };
-}
-
-interface SmugmugImageSizeDetailsResponse {
-    ImageSizeDetails: SmugmugImageSizeDetails;
-}
-
-// const isSmugmugResponse = (res: any): res is SmugmugResponse => {
-//     return "Code" in res && "Message" in res && "Response" in res;
-// }
 
 const instance = axios.create({
     baseURL: 'https://api.smugmug.com/api/v2',
@@ -53,8 +41,11 @@ export const getAlbumKeys = async () => {
     const result = await instance
         .get('/user/georgoff!albums')
         .then((res) => {
-            // const data = JSON.parse(res.data as string) as SmugmugResponse;
-            const typedRes = res.data as unknown as SmugmugResponse;
+            const typedRes = res.data as unknown as {
+                Code: number;
+                Message: string;
+                Response: SmugmugAlbumResponse;
+            };
 
             const albumKeys = typedRes.Response.Album;
 
