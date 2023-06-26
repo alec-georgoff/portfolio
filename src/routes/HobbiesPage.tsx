@@ -1,11 +1,14 @@
 import React from 'react';
 import { SmugmugWidget } from '../integrations/smugmug/SmugmugWidget';
+import { AthlinksWidget } from '../integrations/athlinks/AthlinksWidget';
 
 const HobbiesPage = () => (
     <div>
         <h2>Hobbies</h2>
 
         <SmugmugWidget />
+
+        <AthlinksWidget />
 
         <section>
             <h1 className="hobby-title">Cycling</h1>
