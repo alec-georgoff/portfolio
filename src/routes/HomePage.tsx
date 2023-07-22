@@ -21,29 +21,31 @@ const HomePage = () => {
                     <a href="https://linkedin.com/in/alecgeorgoff">LinkedIn</a>
                 </em>
             </div>
-            <Stack gap={2}>
-                <Button
-                    variant="primary"
-                    size="lg"
-                    onClick={() => navigate('/experience')}
-                >
-                    Experience
-                </Button>
-                <Button
-                    variant="primary"
-                    size="lg"
-                    onClick={() => navigate('/education')}
-                >
-                    Education
-                </Button>
-                <Button
-                    variant="primary"
-                    size="lg"
-                    onClick={() => navigate('/hobbies')}
-                >
-                    Hobbies
-                </Button>
-            </Stack>
+            <div className="home-page-nav-buttons">
+                <Stack gap={2}>
+                    <Button
+                        variant="primary"
+                        size="lg"
+                        onClick={() => navigate('/experience')}
+                    >
+                        Experience
+                    </Button>
+                    <Button
+                        variant="primary"
+                        size="lg"
+                        onClick={() => navigate('/education')}
+                    >
+                        Education
+                    </Button>
+                    <Button
+                        variant="primary"
+                        size="lg"
+                        onClick={() => navigate('/hobbies')}
+                    >
+                        Hobbies
+                    </Button>
+                </Stack>
+            </div>
             <section>
                 Determined full stack software engineer with experience
                 mastering new technologies quickly and contributing to existing

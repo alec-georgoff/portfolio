@@ -5,7 +5,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 
 const ExperiencePage = () => (
     <div>
-        <h2>Work Experience</h2>
+        <div className="experience-title">Work Experience</div>
 
         <Container fluid={'xs'}>
             <Row xs={1} md={2} style={{ flexDirection: 'row' }}>
