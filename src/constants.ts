@@ -2,6 +2,7 @@ import ConvoyLogo from './images/convoy_logo.png';
 import DMCLogo from './images/dmc_logo.png';
 import BrooksLogo from './images/brooks_logo.png';
 import IHMELogo from './images/ihme_logo.jpg';
+import ClinciergeLogo from './images/clincierge_logo.png';
 
 interface JobDetails {
     title: string;
@@ -12,6 +13,11 @@ interface JobDetails {
     bullets: string[];
     image: string;
 }
+
+const clinciergeBullets = [
+    'Developing a frontend web application to allow clinical trial patients to submit their own expenses for reimbursement, in preparation to scale up to more than 10,000 payments per year',
+    "Adding features to an existing internal accounting application to help employees more easily upload to and retrieve data from the company's central database",
+];
 
 const convoyBullets = [
     'Built a heuristics model for predicting trailer loading delays prior to carrier arrival, resulting in a 55% reduction in carrier reported issues for trailer delays',
@@ -36,6 +42,15 @@ const ihmeBullets = [
 ];
 
 export const jobs: JobDetails[] = [
+    {
+        title: 'Software Engineer II',
+        company: 'Clincierge',
+        location: 'Seattle, WA (Remote)',
+        startDate: "Mar '23",
+        endDate: 'Present',
+        bullets: clinciergeBullets,
+        image: ClinciergeLogo,
+    },
     {
         title: 'Software Engineer',
         company: 'Convoy',
