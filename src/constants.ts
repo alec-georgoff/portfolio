@@ -14,6 +14,38 @@ interface JobDetails {
     image: string;
 }
 
+interface Skill {
+    name: string;
+    strength: number;
+}
+
+export const skills: Skill[] = [
+    { name: 'Web App Development', strength: 0.95 },
+    { name: 'REST API Development', strength: 0.8 },
+    { name: 'HTML', strength: 0.95 },
+    { name: 'CSS', strength: 0.9 },
+    { name: 'Entity Framework', strength: 0.3 },
+    { name: 'JavaScript', strength: 0.9 },
+    { name: 'TypeScript', strength: 0.8 },
+    { name: 'React', strength: 0.9 },
+    { name: 'SQL', strength: 0.5 },
+    { name: 'Cloud Computing', strength: 0.5 },
+    { name: 'C#/.NET', strength: 0.4 },
+    { name: 'Third Party APIs', strength: 0.7 },
+    { name: 'Git', strength: 0.9 },
+    { name: 'GitHub/GitLab', strength: 0.85 },
+    { name: 'Mobile Web Apps', strength: 0.7 },
+    { name: 'Responsive Web Design', strength: 0.7 },
+    { name: 'CircleCI', strength: 0.3 },
+    { name: 'Node.js', strength: 0.8 },
+    { name: 'Docker', strength: 0.3 },
+    { name: 'Zod', strength: 0.5 },
+    { name: 'Bootstrap', strength: 0.75 },
+];
+
+export const skillCardColor = (strength: number) =>
+    `solid 3px hsla(120, 100%, 40%, ${strength})`;
+
 const clinciergeBullets = [
     'Developing a frontend web application to allow clinical trial patients to submit their own expenses for reimbursement, in preparation to scale up to more than 10,000 payments per year',
     "Adding features to an existing internal accounting application to help employees more easily upload to and retrieve data from the company's central database",

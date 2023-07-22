@@ -2,6 +2,9 @@ import React from 'react';
 import { Stack } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
+import { skills } from '../constants';
+import SkillCard from '../components/SkillCard';
+import SkillSection from '../components/SkillSection';
 
 const HomePage = () => {
     const navigate = useNavigate();
@@ -53,11 +56,7 @@ const HomePage = () => {
                 while helping cultivate flexible, diverse, and empathetic
                 engineering teams.
             </section>
-            <h2>Skills</h2>
-            Web Application Development | REST API Development | HTML5 | CSS |
-            JavaScript | TypeScript | React | SQL | Cloud Computing | C#/.NET |
-            Entity Framework | Third Party APIs | Git | GitHub/GitLab |
-            Mobile-First Devlopment | Responsive Web Design | CircleCI | Node.js
+            <SkillSection />
         </div>
     );
 };
