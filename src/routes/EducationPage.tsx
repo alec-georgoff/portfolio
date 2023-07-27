@@ -3,7 +3,7 @@ import UMLogo from '../images/um_logo.png';
 
 const EducationPage = () => (
     <div className="education">
-        <h2>Education</h2>
+        <div className="page-title">Education</div>
 
         <img src={UMLogo} className="um-logo" />
 
