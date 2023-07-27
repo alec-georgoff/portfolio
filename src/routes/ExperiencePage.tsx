@@ -8,7 +8,7 @@ const ExperiencePage = () => (
         <div className="experience-title">Work Experience</div>
 
         <Container fluid={'xs'}>
-            <Row xs={1} md={2} style={{ flexDirection: 'row' }}>
+            <Row xs={1} lg={2} style={{ flexDirection: 'row' }}>
                 {jobs.map((j, idx) => (
                     <Col key={idx}>
                         <JobCard jobDetails={j} />
