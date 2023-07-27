@@ -6,6 +6,7 @@ import {
     getRandomImageUrl,
 } from './service';
 import { Button, Spinner } from 'react-bootstrap';
+import RefreshIcon from '../../icons/refresh.svg';
 
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
@@ -60,6 +61,20 @@ export const SmugmugWidget = () => {
                             target="_blank"
                         >
                             {image.albumName}
+                        </Button>
+                        <Button
+                            variant="outline-secondary"
+                            href={image.albumUrl + `/i-${image.imageKey}/A`}
+                            target="_blank"
+                        >
+                            View on Website
+                        </Button>
+                        <Button variant="outline-secondary">
+                            <img
+                                className="refresh-icon"
+                                src={RefreshIcon}
+                                onClick={() => handleRefreshImage()}
+                            />
                         </Button>
                     </div>
                 </div>
