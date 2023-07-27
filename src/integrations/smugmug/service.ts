@@ -12,6 +12,7 @@ interface SmugmugImageResponse {
 export interface SmugmugAlbum {
     AlbumKey: string;
     Title: string;
+    WebUri: string;
 }
 
 interface SmugmugImageSizeDetailsResponse {
@@ -24,6 +25,13 @@ interface SmugmugImageSizeDetailsResponse {
 
 interface SmugmugAlbumResponse {
     Album: SmugmugAlbum[];
+}
+
+export interface SmugmugImageDetails {
+    imageUrl?: string;
+    albumName: string;
+    albumUrl: string;
+    imageKey: string;
 }
 
 const instance = axios.create({
@@ -74,11 +82,11 @@ export const getAlbumImages = async (albumInfo: SmugmugAlbum) => {
             );
 
             console.log(imageKeys);
-            return { imageKeys: imageKeys, albumName: albumInfo.Title };
+            return imageKeys;
         })
         .catch((err) => {
             console.log(err);
-            return { imageKeys: [] as string[], albumName: '' };
+            return [] as string[];
         });
 
     return result;
@@ -115,12 +123,17 @@ export const getRandomImageUrl = async (albums: SmugmugAlbum[]) => {
 
     const albumImages = await getAlbumImages(randomAlbumKey);
 
-    if (!albumImages || !albumImages.imageKeys.length) return undefined;
+    if (!albumImages || !albumImages.length) return undefined;
 
-    randomIndex = Math.floor(Math.random() * albumImages.imageKeys.length);
-    const randomImageKey = albumImages.imageKeys[randomIndex];
+    randomIndex = Math.floor(Math.random() * albumImages.length);
+    const randomImageKey = albumImages[randomIndex];
 
     const imageUrl = await getImageUrl(randomImageKey);
 
-    return { imageUrl: imageUrl, albumName: randomAlbumKey.Title };
+    return {
+        imageUrl: imageUrl,
+        albumName: randomAlbumKey.Title,
+        albumUrl: randomAlbumKey.WebUri,
+        imageKey: randomImageKey,
+    } as SmugmugImageDetails;
 };

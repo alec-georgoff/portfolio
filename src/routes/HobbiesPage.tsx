@@ -5,7 +5,10 @@ const HobbiesPage = () => (
     <div>
         <h2>Hobbies</h2>
 
-        <SmugmugWidget />
+        <section>
+            <h1 className="hobby-title">Photography</h1>
+            <SmugmugWidget />
+        </section>
 
         <section>
             <h1 className="hobby-title">Cycling</h1>

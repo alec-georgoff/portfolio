@@ -1,12 +1,19 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { SmugmugAlbum, getAlbumKeys, getRandomImageUrl } from './service';
-import { Spinner } from 'react-bootstrap';
+import {
+    SmugmugAlbum,
+    SmugmugImageDetails,
+    getAlbumKeys,
+    getRandomImageUrl,
+} from './service';
+import { Button, Spinner } from 'react-bootstrap';
+
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
 export const SmugmugWidget = () => {
     const [albumKeys, setAlbumKeys] = useState<SmugmugAlbum[]>([]);
-    const [image, setImage] = useState<
-        { imageUrl: string | undefined; albumName: string } | undefined
-    >(undefined);
+    const [image, setImage] = useState<SmugmugImageDetails | undefined>(
+        undefined
+    );
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -44,11 +51,22 @@ export const SmugmugWidget = () => {
                     <img
                         src={image.imageUrl}
                         onClick={() => handleRefreshImage()}
+                        className="smugmug-image fade-in"
                     />
-                    <span>{image.albumName}</span>
+                    <div className="album-label">
+                        <Button
+                            variant="outline-primary"
+                            href={image.albumUrl}
+                            target="_blank"
+                        >
+                            {image.albumName}
+                        </Button>
+                    </div>
                 </div>
             ) : (
-                <Spinner animation="border" />
+                <div className="smugmug-spinner fade-in">
+                    <Spinner animation="border" />
+                </div>
             )}
         </div>
     );
