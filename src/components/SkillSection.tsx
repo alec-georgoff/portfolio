@@ -1,6 +1,7 @@
 import React from 'react';
 import { skills } from '../constants';
 import SkillCard from './SkillCard';
+import FadeIn from 'react-fade-in/lib/FadeIn';
 
 const SkillSection = () => (
     <div>
@@ -11,15 +12,17 @@ const SkillSection = () => (
             <span>Expert</span>
         </div>
         <div className="skill-card-layout">
-            {skills
-                .sort((a, b) => b.strength - a.strength)
-                .map((s) => (
-                    <SkillCard
-                        key={s.name}
-                        skill={s.name}
-                        strength={s.strength}
-                    />
-                ))}
+            <FadeIn className="skill-card-layout" delay={100}>
+                {skills
+                    .sort((a, b) => b.strength - a.strength)
+                    .map((s) => (
+                        <SkillCard
+                            key={s.name}
+                            skill={s.name}
+                            strength={s.strength}
+                        />
+                    ))}
+            </FadeIn>
         </div>
     </div>
 );
