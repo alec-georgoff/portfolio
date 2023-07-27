@@ -1,13 +1,16 @@
-section.education {
+.education {
     flex-direction: column;
+    max-width: 90vw;
 }
 
 img.um-logo {
-    max-width: 30rem;
+    max-width: 70vw;
+    max-height: 20rem;
     border-radius: 20%;
 }
 
 .education-degree {
+    text-align: center;
     font-weight: bolder;
     font-size: 2rem;
     margin: 1.5rem 0;

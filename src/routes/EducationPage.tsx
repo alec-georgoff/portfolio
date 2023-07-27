@@ -2,12 +2,12 @@ import React from 'react';
 import UMLogo from '../images/um_logo.png';
 
 const EducationPage = () => (
-    <div>
+    <div className="education">
         <h2>Education</h2>
 
         <img src={UMLogo} className="um-logo" />
 
-        <section className="education">
+        <section>
             <div className="education-degree">
                 B.S. - Biomedical Engineering
             </div>
