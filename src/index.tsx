@@ -8,6 +8,7 @@ import './styles/HomePage.scss';
 import './styles/EducationPage.scss';
 import './styles/ExperiencePage.scss';
 import './styles/HobbiesPage.scss';
+import './styles/Components.scss';
 import HomePage from './routes/HomePage';
 import EducationPage from './routes/EducationPage';
 import ExperiencePage from './routes/ExperiencePage';

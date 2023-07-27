@@ -29,15 +29,7 @@ const JobCard = (props: JobCardProps) => {
     return (
         <Card
             onClick={() => setShowBack(!showBack)}
-            style={{
-                margin: '1rem',
-                minHeight: '31rem',
-                maxHeight: '40rem',
-                width: '25rem',
-                maxWidth: '25rem',
-                boxShadow:
-                    '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
-            }}
+            className="job-card fade-in"
         >
             {showBack ? (
                 <>
