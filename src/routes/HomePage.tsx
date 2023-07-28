@@ -38,12 +38,8 @@ const HomePage = () => {
                     >
                         Education
                     </Button>
-                    <Button
-                        variant="primary"
-                        size="lg"
-                        onClick={() => navigate('/hobbies')}
-                    >
-                        Hobbies
+                    <Button variant="secondary" size="lg" disabled>
+                        Hobbies (Coming Soon!)
                     </Button>
                 </Stack>
             </div>
