@@ -1,7 +1,7 @@
 import React from 'react';
 import { skills } from '../constants';
 import SkillCard from './SkillCard';
-import FadeIn from 'react-fade-in/lib/FadeIn';
+import FadeIn from './FadeIn';
 
 const SkillSection = () => (
     <div>

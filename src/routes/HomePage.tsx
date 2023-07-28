@@ -2,8 +2,6 @@ import React from 'react';
 import { Stack } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
-import { skills } from '../constants';
-import SkillCard from '../components/SkillCard';
 import SkillSection from '../components/SkillSection';
 
 const HomePage = () => {
