@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import React from 'react';
 import { Stack } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
 import SkillSection from '../components/SkillSection';
+import ResumePdf from '../documents/AlecGeorgoff_Resume.pdf';
 
 const HomePage = () => {
     const navigate = useNavigate();
@@ -20,6 +22,11 @@ const HomePage = () => {
                 </em>
                 <em>
                     <a href="https://linkedin.com/in/alecgeorgoff">LinkedIn</a>
+                </em>
+                <em>
+                    <a href={ResumePdf} target="_blank">
+                        Resume
+                    </a>
                 </em>
             </div>
             <div className="home-page-nav-buttons">
