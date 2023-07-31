@@ -28,6 +28,9 @@ const HomePage = () => {
                         Resume
                     </a>
                 </em>
+                <em>
+                    <a href="https://github.com/alec-georgoff">GitHub</a>
+                </em>
             </div>
             <div className="home-page-nav-buttons">
                 <Stack gap={2}>
