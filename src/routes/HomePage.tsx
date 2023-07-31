@@ -48,6 +48,13 @@ const HomePage = () => {
                     >
                         Education
                     </Button>
+                    <Button
+                        variant="primary"
+                        size="lg"
+                        onClick={() => navigate('/projects')}
+                    >
+                        Projects
+                    </Button>
                     <Button variant="secondary" size="lg" disabled>
                         Hobbies (Coming Soon!)
                     </Button>

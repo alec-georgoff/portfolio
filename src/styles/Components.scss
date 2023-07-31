@@ -57,20 +57,28 @@
     }
 }
 
-// JobCard
-.job-card {
+.general-card {
     margin: 1rem;
-    min-height: 31rem;
-    max-height: 40rem;
     width: 25rem;
     max-width: 90vw;
+}
+
+.card-subtitle {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+// JobCard
+.job-card {
+    min-height: 31rem;
+    max-height: 40rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     opacity: 1;
     transition: opacity 5s;
     cursor: pointer;
 }
 
-.card:hover {
+.job-card:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 0.99);
     transition: box-shadow 0.5s linear;
 }

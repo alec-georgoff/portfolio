@@ -29,7 +29,7 @@ const JobCard = (props: JobCardProps) => {
     return (
         <Card
             onClick={() => setShowBack(!showBack)}
-            className="job-card fade-in"
+            className="job-card general-card fade-in"
         >
             {showBack ? (
                 <>
