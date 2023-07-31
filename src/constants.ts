@@ -4,16 +4,7 @@ import BrooksLogo from './images/brooks_logo.png';
 import IHMELogo from './images/ihme_logo.jpg';
 import ClinciergeLogo from './images/clincierge_logo.png';
 
-interface JobDetails {
-    title: string;
-    company: string;
-    location: string;
-    startDate: string;
-    endDate: string;
-    bullets: string[];
-    image: string;
-}
-
+// SKILLS
 interface Skill {
     name: string;
     strength: number;
@@ -45,6 +36,17 @@ export const skills: Skill[] = [
 
 export const skillCardColor = (strength: number) =>
     `solid 3px hsla(120, 100%, 40%, ${strength})`;
+
+// EXPERIENCE
+interface JobDetails {
+    title: string;
+    company: string;
+    location: string;
+    startDate: string;
+    endDate: string;
+    bullets: string[];
+    image: string;
+}
 
 const clinciergeBullets = [
     'Developing a frontend web application to allow clinical trial patients to submit their own expenses for reimbursement, in preparation to scale up to more than 10,000 payments per year',
@@ -122,3 +124,39 @@ export const jobs: JobDetails[] = [
 ];
 
 export type { JobDetails };
+
+// PROJECTS
+
+export interface Project {
+    title: string;
+    githubExtension: string;
+    skills: string[];
+    bullets: string[];
+}
+
+export const projects: Project[] = [
+    {
+        title: 'Portfolio Website',
+        githubExtension: 'portfolio',
+        skills: ['TypeScript', 'React', 'AWS Amplify', 'SASS'],
+        bullets: [
+            'Portfolio meant to showcase my experience and personal life',
+            'Simple React app hosted on AWS Amplify',
+        ],
+    },
+    {
+        title: 'Spotify Listening Habits',
+        githubExtension: 'spotify-album-art',
+        skills: [
+            'TypeScript',
+            'React',
+            'Third Party API Integration',
+            'OAuth 2.0',
+        ],
+        bullets: [
+            "Interactive app for exploring a user's Spotify listening habits",
+            "Leverages Spotify's public API to pull data about most played songs for a user",
+            'Able to view listening habits across three time frames',
+        ],
+    },
+];

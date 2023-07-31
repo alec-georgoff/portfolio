@@ -12,6 +12,7 @@ import HomePage from './routes/HomePage';
 import EducationPage from './routes/EducationPage';
 import ExperiencePage from './routes/ExperiencePage';
 import ApplicationWrapper from './components/ApplicationWrapper';
+import ProjectsPage from './routes/ProjectsPage';
 
 const router = createBrowserRouter([
     {
@@ -35,6 +36,14 @@ const router = createBrowserRouter([
         element: (
             <ApplicationWrapper>
                 <EducationPage />
+            </ApplicationWrapper>
+        ),
+    },
+    {
+        path: 'projects',
+        element: (
+            <ApplicationWrapper>
+                <ProjectsPage />
             </ApplicationWrapper>
         ),
     },
