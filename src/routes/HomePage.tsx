@@ -15,6 +15,8 @@ const HomePage = () => {
             <div className="personal-details">
                 <em>Seattle, WA</em>
                 <em>419-350-7725</em>
+            </div>
+            <div className="personal-details">
                 <em>
                     <a href="mailto:alec.georgoff@gmail.com">
                         alec.georgoff@gmail.com
