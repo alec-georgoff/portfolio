@@ -10,7 +10,7 @@ interface ProjectCardProps {
 const ProjectCard = (props: ProjectCardProps) => (
     <Card className="general-card">
         <Card.Body>
-            <Card.Title style={{ fontSize: '2rem' }}>
+            <Card.Title style={{ fontSize: '2rem', textAlign: 'center' }}>
                 {props.project.title}
             </Card.Title>
             <Card.Subtitle className="text-muted">
