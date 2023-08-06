@@ -12,6 +12,7 @@ const HomePage = () => {
 
     return (
         <div style={{ flexDirection: 'column' }}>
+            <RideDisplay />
             <div className="name-title">Alec Georgoff</div>
             <div className="personal-details">
                 <em>Seattle, WA</em>
@@ -71,7 +72,6 @@ const HomePage = () => {
                 engineering teams.
             </section>
             <SkillSection />
-            <RideDisplay />
         </div>
     );
 };
