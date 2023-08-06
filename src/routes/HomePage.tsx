@@ -14,7 +14,6 @@ const HomePage = () => {
             <div className="name-title">Alec Georgoff</div>
             <div className="personal-details">
                 <em>Seattle, WA</em>
-                <em>419-350-7725</em>
             </div>
             <div className="personal-details">
                 <em>
@@ -22,6 +21,8 @@ const HomePage = () => {
                         alec.georgoff@gmail.com
                     </a>
                 </em>
+            </div>
+            <div className="personal-details">
                 <em>
                     <a href="https://linkedin.com/in/alecgeorgoff">LinkedIn</a>
                 </em>
