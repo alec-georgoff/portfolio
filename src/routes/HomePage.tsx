@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
 import SkillSection from '../components/SkillSection';
 import ResumePdf from '../documents/AlecGeorgoff_Resume.pdf';
+import RideDisplay from '../components/RideDisplay';
 
 const HomePage = () => {
     const navigate = useNavigate();
@@ -70,6 +71,7 @@ const HomePage = () => {
                 engineering teams.
             </section>
             <SkillSection />
+            <RideDisplay />
         </div>
     );
 };
