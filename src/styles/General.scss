@@ -1,9 +1,14 @@
+$body-bg: #4b5043;
+$primary: #a5907e;
+
 @import '~bootstrap/scss/bootstrap';
 
 div {
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: #eceef8;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .page-title {

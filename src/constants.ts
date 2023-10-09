@@ -35,7 +35,7 @@ export const skills: Skill[] = [
 ];
 
 export const skillCardColor = (strength: number) =>
-    `solid 3px hsla(120, 100%, 40%, ${strength})`;
+    `solid 3px hsl(88, 73%, 91%, ${strength})`;
 
 // EXPERIENCE
 interface JobDetails {
