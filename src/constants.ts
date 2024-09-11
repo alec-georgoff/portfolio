@@ -3,6 +3,7 @@ import DMCLogo from './images/dmc_logo.png';
 import BrooksLogo from './images/brooks_logo.png';
 import IHMELogo from './images/ihme_logo.jpg';
 import ClinciergeLogo from './images/clincierge_logo.png';
+import SmartsheetLogo from './images/smartsheet_logo.png';
 
 // SKILLS
 interface Skill {
@@ -48,9 +49,13 @@ interface JobDetails {
     image: string;
 }
 
+const smartsheetBullets = [
+    'Member of the Dashboards team, working on new features to delight users of Smartsheet dashboards',
+];
+
 const clinciergeBullets = [
-    'Developing a frontend web application to allow clinical trial patients to submit their own expenses for reimbursement, in preparation to scale up to more than 10,000 payments per year',
-    "Adding features to an existing internal accounting application to help employees more easily upload to and retrieve data from the company's central database",
+    'Developed a frontend web application to allow clinical trial patients to submit their own expenses for reimbursement, in preparation to scale up to more than 10,000 payments per year',
+    "Added features to an existing internal accounting application to help employees more easily upload to and retrieve data from the company's central database",
 ];
 
 const convoyBullets = [
@@ -78,10 +83,19 @@ const ihmeBullets = [
 export const jobs: JobDetails[] = [
     {
         title: 'Software Engineer II',
+        company: 'Smartsheet',
+        location: 'Bellevue, WA',
+        startDate: "Mar '24",
+        endDate: 'Present',
+        bullets: smartsheetBullets,
+        image: SmartsheetLogo,
+    },
+    {
+        title: 'Software Engineer II',
         company: 'Clincierge',
         location: 'Seattle, WA (Remote)',
         startDate: "Mar '23",
-        endDate: 'Present',
+        endDate: "Mar '24",
         bullets: clinciergeBullets,
         image: ClinciergeLogo,
     },
