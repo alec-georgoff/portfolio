@@ -16,24 +16,37 @@ const HomePage = () => {
                 <em>Seattle, WA</em>
             </div>
             <div className="personal-details">
-                <em>
-                    <a href="mailto:alec.georgoff@gmail.com">
-                        alec.georgoff@gmail.com
-                    </a>
-                </em>
+                <Button
+                    variant="secondary"
+                    href="mailto:alec.georgoff@gmail.com"
+                    size="sm"
+                >
+                    alec.georgoff@gmail.com
+                </Button>
             </div>
             <div className="personal-details">
-                <em>
-                    <a href="https://linkedin.com/in/alecgeorgoff">LinkedIn</a>
-                </em>
-                <em>
-                    <a href={ResumePdf} target="_blank">
-                        Resume
-                    </a>
-                </em>
-                <em>
-                    <a href="https://github.com/alec-georgoff">GitHub</a>
-                </em>
+                <Button
+                    variant="secondary"
+                    href="https://linkedin.com/in/alecgeorgoff"
+                    size="sm"
+                >
+                    LinkedIn
+                </Button>
+                <Button
+                    variant="secondary"
+                    href={ResumePdf}
+                    size="sm"
+                    target="_blank"
+                >
+                    Resume
+                </Button>
+                <Button
+                    variant="secondary"
+                    href="https://github.com/alec-georgoff"
+                    size="sm"
+                >
+                    GitHub
+                </Button>
             </div>
             <div className="home-page-nav-buttons">
                 <Stack gap={2}>
@@ -58,7 +71,7 @@ const HomePage = () => {
                     >
                         Projects
                     </Button>
-                    <Button variant="secondary" size="lg" disabled>
+                    <Button variant="primary" size="lg" disabled>
                         Hobbies (Coming Soon!)
                     </Button>
                 </Stack>
