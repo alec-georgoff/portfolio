@@ -13,6 +13,7 @@ import EducationPage from './routes/EducationPage';
 import ExperiencePage from './routes/ExperiencePage';
 import ApplicationWrapper from './components/ApplicationWrapper';
 import ProjectsPage from './routes/ProjectsPage';
+import BikeCampingPlanner from './routes/BikeCampingPlanner';
 
 const router = createBrowserRouter([
     {
@@ -44,6 +45,14 @@ const router = createBrowserRouter([
         element: (
             <ApplicationWrapper>
                 <ProjectsPage />
+            </ApplicationWrapper>
+        ),
+    },
+    {
+        path: 'bike-camping-planner',
+        element: (
+            <ApplicationWrapper>
+                <BikeCampingPlanner />
             </ApplicationWrapper>
         ),
     },
