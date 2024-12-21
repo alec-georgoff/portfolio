@@ -1,3 +1,5 @@
+@import './General.scss';
+
 // GENERAL
 
 .fade-in {
@@ -70,6 +72,7 @@
 }
 
 // JobCard
+
 .job-card {
     min-height: 31rem;
     max-height: 40rem;
@@ -85,9 +88,17 @@
 }
 
 // ListSection
+
 .list-section-container {
     border: solid black 0.5rem;
     border-radius: 1rem;
     padding: 1rem;
     margin: 0.5rem;
+}
+
+// BasicInput
+
+input.basic-input {
+    background-color: $body-bg;
+    color: white;
 }

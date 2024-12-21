@@ -9,7 +9,13 @@ const BasicInput = (props: BasicInputProps) => {
 
     const [value, setValue] = useState<string>(initialValue ?? '');
 
-    return <input value={value} onChange={(e) => setValue(e.target.value)} />;
+    return (
+        <input
+            className="basic-input"
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+        />
+    );
 };
 
 export default BasicInput;
