@@ -174,3 +174,34 @@ export const projects: Project[] = [
         ],
     },
 ];
+
+// BIKE CAMPING
+
+export interface BikeCampingTrip {
+    packingList: PackingList;
+}
+
+export interface PackingList {
+    sections: PackingListSection;
+}
+
+export interface PackingListSection {
+    title: string;
+    items: string[];
+}
+
+export const NEW_SECTION: PackingListSection = {
+    title: 'New Section',
+    items: [],
+};
+
+export const DEFAULT_SECTIONS: PackingListSection[] = [
+    {
+        title: 'Gear',
+        items: ['Tire Levers', 'Air Pump', 'Spare Tubes'],
+    },
+    {
+        title: 'Clothing',
+        items: ['Bibs', 'Socks', 'Jersey'],
+    },
+];

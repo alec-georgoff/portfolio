@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import BasicInput from './BasicInput';
+import { PackingListSection } from '../constants';
 
-const ListSection = () => {
-    const [items, setItems] = useState<string[]>(['tent', 'water']);
+const ListSection = (props: PackingListSection) => {
+    const { title, items } = props;
+    const [currentItems, setCurrentItems] = useState<string[]>(items);
 
-    const addItem = () => setItems(items.concat(''));
+    const addItem = () => setCurrentItems(currentItems.concat(''));
 
     return (
         <div className="list-section-container">
             <div>
-                <BasicInput initialValue="New Section" />
+                <BasicInput initialValue={title} />
             </div>
             <ul>
-                {items.map((i) => (
+                {currentItems.map((i) => (
                     <div style={{ display: 'flex', flexDirection: 'row' }}>
                         <Form.Check />
                         <BasicInput initialValue={i} />

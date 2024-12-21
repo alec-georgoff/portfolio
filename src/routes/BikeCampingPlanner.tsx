@@ -1,21 +1,24 @@
 import { useState } from 'react';
 import ListSection from '../components/ListSection';
-import React from 'react';
 import { Button } from 'react-bootstrap';
+import {
+    DEFAULT_SECTIONS,
+    NEW_SECTION,
+    PackingListSection,
+} from '../constants';
 
 const BikeCampingPlanner = () => {
-    const [trips, setTrips] = useState<string[]>([]);
-    const [sections, setSections] = useState<React.ReactNode[]>([
-        <ListSection />,
-        <ListSection />,
-    ]);
+    const [sections, setSections] =
+        useState<PackingListSection[]>(DEFAULT_SECTIONS);
 
-    const addSection = () => setSections(sections.concat(<ListSection />));
+    const addSection = () => setSections(sections.concat(NEW_SECTION));
 
     return (
         <div>
             <span>bike camping time!</span>
-            {sections.map((s) => s)}
+            {sections.map((s) => (
+                <ListSection key={s.title} title={s.title} items={s.items} />
+            ))}
             <Button variant="primary" onClick={addSection}>
                 Add Section
             </Button>
