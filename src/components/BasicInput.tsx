@@ -1,13 +1,10 @@
-import { useState } from 'react';
-
 interface BasicInputProps {
-    initialValue?: string;
+    value: string;
+    setValue: (newValue: string) => void;
 }
 
 const BasicInput = (props: BasicInputProps) => {
-    const { initialValue } = props;
-
-    const [value, setValue] = useState<string>(initialValue ?? '');
+    const { value, setValue } = props;
 
     return (
         <input
