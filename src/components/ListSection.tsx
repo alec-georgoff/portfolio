@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import BasicInput from './BasicInput';
 import { PackingListSection } from '../constants';
@@ -26,7 +26,10 @@ const ListSection = (props: PackingListSection) => {
             </div>
             <ul>
                 {currentItems.map((item, i) => (
-                    <div style={{ display: 'flex', flexDirection: 'row' }}>
+                    <div
+                        style={{ display: 'flex', flexDirection: 'row' }}
+                        key={crypto.randomUUID()}
+                    >
                         <Form.Check />
                         <BasicInput
                             value={item}
