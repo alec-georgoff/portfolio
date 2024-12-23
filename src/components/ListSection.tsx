@@ -16,8 +16,11 @@ const ListSection = (props: PackingListSection) => {
     };
 
     const addItem = () => setCurrentItems(currentItems.concat(''));
-    const removeItem = (item: string) =>
-        setCurrentItems(currentItems.filter((ci) => ci !== item));
+    const removeItem = (i: number) => {
+        const copy = [...currentItems];
+        copy.splice(i, 1);
+        setCurrentItems(copy);
+    };
 
     return (
         <div className="list-section-container">
@@ -28,7 +31,7 @@ const ListSection = (props: PackingListSection) => {
                 {currentItems.map((item, i) => (
                     <div
                         style={{ display: 'flex', flexDirection: 'row' }}
-                        key={crypto.randomUUID()}
+                        key={`key${i}`}
                     >
                         <Form.Check />
                         <BasicInput
@@ -39,7 +42,7 @@ const ListSection = (props: PackingListSection) => {
                         />
                         <Button
                             variant="secondary"
-                            onClick={() => removeItem(item)}
+                            onClick={() => removeItem(i)}
                         >
                             X
                         </Button>

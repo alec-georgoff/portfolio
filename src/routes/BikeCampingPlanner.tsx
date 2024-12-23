@@ -16,8 +16,8 @@ const BikeCampingPlanner = () => {
     return (
         <div>
             <span>bike camping time!</span>
-            {sections.map((s) => (
-                <ListSection key={s.title} title={s.title} items={s.items} />
+            {sections.map((s, i) => (
+                <ListSection key={`key${i}`} title={s.title} items={s.items} />
             ))}
             <Button variant="primary" onClick={addSection}>
                 Add Section
