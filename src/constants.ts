@@ -186,21 +186,19 @@ export interface PackingList {
 }
 
 export interface PackingListSection {
+    id: string;
     title: string;
     items: string[];
 }
 
-export const NEW_SECTION: PackingListSection = {
-    title: 'New Section',
-    items: [],
-};
-
 export const DEFAULT_SECTIONS: PackingListSection[] = [
     {
+        id: crypto.randomUUID(),
         title: 'Gear',
         items: ['Tire Levers', 'Air Pump', 'Spare Tubes'],
     },
     {
+        id: crypto.randomUUID(),
         title: 'Clothing',
         items: ['Bibs', 'Socks', 'Jersey'],
     },

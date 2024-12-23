@@ -3,9 +3,13 @@ import { Button, Form } from 'react-bootstrap';
 import BasicInput from './BasicInput';
 import { PackingListSection } from '../constants';
 
-const ListSection = (props: PackingListSection) => {
+interface ListSectionProps extends Omit<PackingListSection, 'id'> {
+    onRemove: () => void;
+}
+
+const ListSection = (props: ListSectionProps) => {
     // TODO: update state to pass even further up
-    const { title, items } = props;
+    const { title, items, onRemove } = props;
     const [currentItems, setCurrentItems] = useState<string[]>(items);
     const [sectionTitle, setSectionTitle] = useState<string>(title);
 
@@ -51,6 +55,9 @@ const ListSection = (props: PackingListSection) => {
             </ul>
             <Button variant="primary" onClick={addItem}>
                 Add Item
+            </Button>
+            <Button variant="primary" onClick={onRemove}>
+                Delete Section
             </Button>
         </div>
     );
